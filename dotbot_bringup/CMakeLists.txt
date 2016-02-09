@@ -152,6 +152,12 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
 
+install(FILES
+  launch/bringup.launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+
+
 ## Mark executables and/or libraries for installation
 # install(TARGETS dotbot_bringup dotbot_bringup_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
