@@ -50,6 +50,7 @@ add_message_files(
   FILES
   Led.msg
   Speed.msg
+  Sensors.msg
 )
 
 ## Generate services in the 'srv' folder
