@@ -3,20 +3,23 @@ import rospy
 from dotbot_msgs.msg import Led
 import RPi.GPIO as GPIO
 
+led1 = 7
+led2 = 11
+led3 = 12
 
 def led_cb(led):
-    GPIO.output(7, led.led1)
-    GPIO.output(8, led.led2)
-    GPIO.output(9, led.led3)
+    GPIO.output(led1, led.led1)
+    GPIO.output(led2, led.led2)
+    GPIO.output(led3, led.led3)
 
 def led_driver():
     GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(7, GPIO.OUT)
-    GPIO.setup(8, GPIO.OUT)
-    GPIO.setup(9, GPIO.OUT)
-    GPIO.output(7,False)
-    GPIO.output(8,False)
-    GPIO.output(9,False)
+    GPIO.setup(led1, GPIO.OUT)
+    GPIO.setup(led2, GPIO.OUT)
+    GPIO.setup(led3, GPIO.OUT)
+    GPIO.output(led1,False)
+    GPIO.output(led2,False)
+    GPIO.output(led3,False)
     rospy.init_node('led_driver', anonymous=True)
     rospy.Subscriber("/dotbot/led", Led, led_cb)
     rospy.spin()
