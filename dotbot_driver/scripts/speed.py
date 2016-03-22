@@ -17,7 +17,7 @@ class SpeedNode():
 
         self.pin_dx = dx[1]
         self.pin_sx = sx[1]
-        rospy.init_node('led_driver', anonymous=True)
+        rospy.init_node('speed_driver', anonymous=True)
         rospy.Subscriber("/dotbot/speed", Speed, self.on_speed)
         rospy.spin()
 
