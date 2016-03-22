@@ -25,14 +25,14 @@ class SpeedNode():
         if msg.sx < 0:
             GPIO.output(self.pin_sx, True)
             self.pwm_sx.start(msg.sx + 100)
-        else
+        else:
             GPIO.output(self.pin_sx, False)
             self.pwm_sx.start(msg.sx)
 
         if msg.dx < 0:
             GPIO.output(self.pin_dx, True)
             self.pwm_dx.start(msg.dx + 100)
-        else
+        else:
             GPIO.output(self.pin_dx, False)
             self.pwm_dx.start(msg.dx)
 
