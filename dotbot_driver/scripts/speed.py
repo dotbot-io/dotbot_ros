@@ -24,8 +24,8 @@ class SpeedNode():
         while not rospy.is_shutdown():
             self.stop_speed = self.stop_speed + 1
             if self.stop_speed > 2:
-                GPIO.output(self.pin_sx, False)                
-                GPIO.output(self.pin_sx, False)                
+                GPIO.output(self.pin_dx, False)                
+                GPIO.output(self.pin_sx, False)
                 self.pwm_sx.start(0)
                 self.pwm_dx.start(0)
             rate.sleep()
