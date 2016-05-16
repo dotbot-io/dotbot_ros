@@ -19,7 +19,7 @@ class SpeedNode():
         self.pin_dx = dx[1]
         self.pin_sx = sx[1]
         rospy.init_node('speed_driver', anonymous=True)
-        rospy.Subscriber("/dotbot/speed", Speed, self.on_speed)
+        rospy.Subscriber("speed", Speed, self.on_speed)
         rate = rospy.Rate(1) # 10hz
         while not rospy.is_shutdown():
             self.stop_speed = self.stop_speed + 1

@@ -21,7 +21,7 @@ def led_driver():
     GPIO.output(led2,False)
     GPIO.output(led3,False)
     rospy.init_node('led_driver', anonymous=True)
-    rospy.Subscriber("/dotbot/led", Led, led_cb)
+    rospy.Subscriber("led", Led, led_cb)
     rospy.spin()
 
 if __name__ == '__main__':

@@ -1,0 +1,12 @@
+<launch>
+    <node name="rosserial" pkg="rosserial_python" type="serial_node.py">
+        <param name="port" value="/dev/ttyAMA0" />
+    </node>
+    <node name="dotbot_led" pkg="dotbot_driver" type="led.py">
+    </node>
+
+    <node name="dotbot_speed" pkg="dotbot_driver" type="speed.py">
+    </node>
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" />
+</launch>
