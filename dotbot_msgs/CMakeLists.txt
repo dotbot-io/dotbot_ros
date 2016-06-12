@@ -51,12 +51,16 @@ add_message_files(
   Led.msg
   Speed.msg
   Sensors.msg
+  Move.msg
+  RobotInfo.msg
+  Attack.msg
 )
 
 # Generate services in the 'srv' folder
 add_service_files(
   FILES
   GetMoves.srv
+  GetRobotInfo.srv
 )
 
 ## Generate actions in the 'action' folder

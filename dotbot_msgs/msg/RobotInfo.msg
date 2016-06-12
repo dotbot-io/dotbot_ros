@@ -1,0 +1,10 @@
+string name
+uint16 hp_max
+uint16 atk
+uint16 def
+uint16 spd
+string type
+dotbot_msgs/Move m1
+dotbot_msgs/Move m2
+dotbot_msgs/Move m3
+dotbot_msgs/Move m4
