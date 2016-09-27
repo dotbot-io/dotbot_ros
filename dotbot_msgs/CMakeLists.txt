@@ -49,6 +49,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   Led.msg
+  Input.msg
   Speed.msg
   Sensors.msg
   Move.msg
