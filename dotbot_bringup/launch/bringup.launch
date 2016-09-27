@@ -4,5 +4,9 @@
 	    </node>
 	    <node name="dotbot_speed" pkg="dotbot_driver" type="speed.py">
 	    </node>
+
+			<node name="dotbot_input" pkg="dotbot_driver" type="input.py">
+			</node>
+
 	</group>
 </launch>

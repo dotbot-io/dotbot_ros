@@ -152,6 +152,7 @@ include_directories(
 install(PROGRAMS
   scripts/led.py
   scripts/speed.py
+  scripts/input.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
