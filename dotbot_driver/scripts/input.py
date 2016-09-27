@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 class InputNode():
     def __init__(self, bs = (3,5)):
         pub = rospy.Publisher('input', Input, queue_size=10)
-        rospy.init_node('led_driver', anonymous=True)
+        rospy.init_node('input_driver', anonymous=True)
         GPIO.setmode(GPIO.BOARD)
         for b in bs:
             GPIO.setup(b, GPIO.IN)
@@ -18,6 +18,7 @@ class InputNode():
             msg.input1 = GPIO.input(bs[0])
             msg.input2 = GPIO.input(bs[1])
             pub.publish(msg)
+            print 'test'
             rate.sleep()
 
 
