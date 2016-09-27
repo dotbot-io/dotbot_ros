@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 
 
 class InputNode():
-    def __init__(self, bs = (1)):
+    def __init__(self, bs = (3,5)):
         GPIO.setmode(GPIO.BOARD)
         for b in bs:
             GPIO.setup(dx[0], GPIO.IN)
@@ -13,7 +13,7 @@ class InputNode():
 
         while not rospy.is_shutdown():
             for b in bs:
-                print "input ", b, " : ", GPIO.input(b) 
+                print "input ", b, " : ", GPIO.input(b)
 
 
 if __name__ == '__main__':
