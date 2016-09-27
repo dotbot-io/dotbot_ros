@@ -11,14 +11,13 @@ class InputNode():
         GPIO.setmode(GPIO.BOARD)
         for b in bs:
             GPIO.setup(b, GPIO.IN)
-        rate = rospy.Rate(1) # 10hz
+        rate = rospy.Rate(5) # 10hz
 
         while not rospy.is_shutdown():
             msg = Input()
             msg.input1 = GPIO.input(bs[0])
             msg.input2 = GPIO.input(bs[1])
             pub.publish(msg)
-            print 'test'
             rate.sleep()
 
 
