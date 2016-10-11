@@ -154,6 +154,7 @@ include_directories(
 
 install(FILES
   launch/bringup.launch
+  launch/bringup_isolated.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
