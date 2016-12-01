@@ -85,6 +85,6 @@ class DriverNode():
 
 if __name__ == '__main__':
     try:
-        n = SpeedNode()
+        n = DriverNode()
     finally:
         GPIO.cleanup()
