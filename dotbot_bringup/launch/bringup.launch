@@ -1,12 +1,6 @@
 <launch>
 	<group ns="$(env DOTBOT_NAME)">
-	    <node name="dotbot_led" pkg="dotbot_driver" type="led.py">
-	    </node>
-	    <node name="dotbot_speed" pkg="dotbot_driver" type="speed.py">
-	    </node>
-
-			<node name="dotbot_input" pkg="dotbot_driver" type="input.py">
-			</node>
-
+		<node name="dotbot_driver" pkg="dotbot_driver" type="driver.py">
+		</node>
 	</group>
 </launch>
