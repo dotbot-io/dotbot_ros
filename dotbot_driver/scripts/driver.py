@@ -41,18 +41,18 @@ class DriverNode():
 
     def init_leds(self, leds = (7,11,12)):
         self.leds = leds
+        GPIO.setup(self.leds[0], GPIO.OUT)
         GPIO.setup(self.leds[1], GPIO.OUT)
         GPIO.setup(self.leds[2], GPIO.OUT)
-        GPIO.setup(self.leds[3], GPIO.OUT)
-        GPIO.output(self.eds[1],False)
+        GPIO.output(self.eds[0],False)
+        GPIO.output(self.leds[1],False)
         GPIO.output(self.leds[2],False)
-        GPIO.output(self.leds[3],False)
         rospy.Subscriber("led", Led, self.on_led)
 
     def init_inputs(self, inputs=(3,5)):
         self.inputs = inputs
+        GPIO.setup(inputs[0], GPIO.IN)
         GPIO.setup(inputs[1], GPIO.IN)
-        GPIO.setup(inputs[2], GPIO.IN)
         self.pub_input = rospy.Publisher('input', Input, queue_size=10)
 
     def pub_inputs(self):
@@ -78,9 +78,9 @@ class DriverNode():
             self.pwm_dx.start(msg.dx)
 
     def on_led(self, led):
-        GPIO.output(self.leds[1], led.led1)
-        GPIO.output(self.leds[2], led.led2)
-        GPIO.output(self.leds[3], led.led3)
+        GPIO.output(self.leds[0], led.led1)
+        GPIO.output(self.leds[1], led.led2)
+        GPIO.output(self.leds[2], led.led3)
 
 
 if __name__ == '__main__':
