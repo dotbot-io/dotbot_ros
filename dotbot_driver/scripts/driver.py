@@ -44,7 +44,7 @@ class DriverNode():
         GPIO.setup(self.leds[0], GPIO.OUT)
         GPIO.setup(self.leds[1], GPIO.OUT)
         GPIO.setup(self.leds[2], GPIO.OUT)
-        GPIO.output(self.eds[0],False)
+        GPIO.output(self.leds[0],False)
         GPIO.output(self.leds[1],False)
         GPIO.output(self.leds[2],False)
         rospy.Subscriber("led", Led, self.on_led)
