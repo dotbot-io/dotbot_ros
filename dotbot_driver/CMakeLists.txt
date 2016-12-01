@@ -153,6 +153,7 @@ install(PROGRAMS
   scripts/led.py
   scripts/speed.py
   scripts/input.py
+  scripts/driver.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
