@@ -51,14 +51,14 @@ class DriverNode():
 
     def init_inputs(self, inputs=(3,5)):
         self.inputs = inputs
-        GPIO.setup(inputs[0], GPIO.IN)
-        GPIO.setup(inputs[1], GPIO.IN)
+        GPIO.setup(self.inputs[0], GPIO.IN)
+        GPIO.setup(self.inputs[1], GPIO.IN)
         self.pub_input = rospy.Publisher('input', Input, queue_size=10)
 
     def pub_inputs(self):
         msg = Input()
-        msg.input1 = GPIO.input(bs[0])
-        msg.input2 = GPIO.input(bs[1])
+        msg.input1 = GPIO.input(self.inputs[0])
+        msg.input2 = GPIO.input(self.inputs[1])
         self.pub_input.publish(msg)
 
     def on_speed(self, msg):
