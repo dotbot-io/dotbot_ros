@@ -14,7 +14,7 @@ class DriverNode():
         rate = rospy.Rate(10) # 10hz
         while not rospy.is_shutdown():
             self.check_reset_speed()
-            self.pub_input()
+            self.pub_inputs()
             rate.sleep()
 
     def init_speed(self, dx = (15,16), sx = (21,22)):
